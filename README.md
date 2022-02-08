@@ -5,9 +5,17 @@ A Rust implementation of the union-find disjoint set graph algorithm
 
 # Quick Start
 
-## Run the Tests
+## Run as a CLI
+``` bash
+cargo build
+cd target/debug
+cozad-union-find -n ../../data/nodes_small.txt -c ../../connections_small.txt
 
 ```
+
+## Run the tests
+
+``` bash
 cargo test
 ```
 
