@@ -1,7 +1,7 @@
 # cozad-union-find
 A Rust implementation of the union-find disjoint set graph algorithm
 
-![MIT License](https://img.shields.io/github/license/ccozad/cozad-union-find)
+![MIT License](https://img.shields.io/github/license/ccozad/cozad-union-find) ![Build Status](https://img.shields.io/github/workflow/status/ccozad/cozad-union-find/Build)
 
 # Quick Start
 
