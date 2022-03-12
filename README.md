@@ -9,7 +9,7 @@ A Rust implementation of the union-find disjoint set graph algorithm
 ```
 cargo build
 cd target/debug
-cozad-union-find -n ../../data/nodes_small.txt -c ../../connections_small.txt
+./cozad-union-find -n ../../data/nodes_small.txt -c ../../data/connections_small.txt
 
 ```
 

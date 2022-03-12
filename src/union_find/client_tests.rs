@@ -1,4 +1,5 @@
 use crate::union_find::client as ufclient;
+use crate::union_find::client::BulkConnection as ufconnection;
 
 #[test]
 fn constructor() {
@@ -135,17 +136,17 @@ fn connect_nodes_bulk() {
     client.add_nodes_bulk(nodes);
 
     let connections = vec![
-        (4, 3),
-        (3, 8),
-        (6, 5),
-        (9, 4),
-        (2, 1),
-        (8, 9),
-        (5, 0),
-        (7, 2),
-        (6, 1),
-        (1, 0),
-        (6, 7)
+        ufconnection { a: 4, b: 3 },
+        ufconnection { a: 3, b: 8 },
+        ufconnection { a: 6, b: 5 },
+        ufconnection { a: 9, b: 4 },
+        ufconnection { a: 2, b: 1 },
+        ufconnection { a: 8, b: 9 },
+        ufconnection { a: 5, b: 0 },
+        ufconnection { a: 7, b: 2 },
+        ufconnection { a: 6, b: 1 },
+        ufconnection { a: 1, b: 0 },
+        ufconnection{ a: 6, b: 7 }
     ];
     client.connect_nodes_bulk(connections);
 
