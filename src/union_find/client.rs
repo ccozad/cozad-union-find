@@ -76,7 +76,8 @@ impl Client {
     /// # Arguments
     ///
     /// * `uuid` - Unique ID of node
-    /// 
+    ///
+    #[allow(dead_code)]
     pub fn add_node(&mut self, uuid: &str) {
         if !self.node_exists(uuid) {
             let node = Node { 
@@ -117,7 +118,8 @@ impl Client {
     ///
     /// * `uuid_a` - Unique id first node
     /// * `uuid_b` - Unique id second node
-    /// 
+    ///
+    #[allow(dead_code)]
     pub fn connect_nodes(&mut self, uuid_a: &str, uuid_b: &str) {
         let uuid_a_root = self.find_root_index(uuid_a);
         let uuid_b_root = self.find_root_index(uuid_b);
@@ -212,7 +214,8 @@ impl Client {
     ///
     /// * `uuid_a` - Unique ID of first connection
     /// * `uuid_b` - Unique ID of second connection
-    /// 
+    ///
+    #[allow(dead_code)] 
     pub fn nodes_connected(&self, uuid_a: &str, uuid_b: &str) -> bool {
         let uuid_a_root = self.find_root_index(uuid_a);
         let uuid_b_root = self.find_root_index(uuid_b);
@@ -221,6 +224,7 @@ impl Client {
     }
 
     /// The number of unique nodes in the graph
+    #[allow(dead_code)]
     pub fn node_count(&self) -> usize {
         self.nodes.len() - 1
     }
