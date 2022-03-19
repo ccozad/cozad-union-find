@@ -2,6 +2,11 @@
 name = "cozad-union-find"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "An implementation of the union-find disjoint set graph algorithm"
+homepage = "https://github.com/ccozad/cozad-union-find"
+repository = "https://github.com/ccozad/cozad-union-find"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
