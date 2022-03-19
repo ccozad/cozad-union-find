@@ -10,7 +10,7 @@ A Rust implementation of the union-find disjoint set graph algorithm
 For relatively small networks you can simply interact with nodes by name.
 
 ``` rust
-use union_find::client as ufclient;
+use cozad_union_find::client as ufclient;
 
 let mut client = ufclient::Client::new();
 
@@ -51,8 +51,8 @@ Disjoint sets found: 2
 When you have a large volume of connections to process you can skip the lookups that occur with named nodes and use the bulk interfaces. The process involves giving a vector of node names and then specifying connections between nodes by index.
 
 ``` rust
-use union_find::client as ufclient;
-use union_find::client::BulkConnection as ufconnection;
+use cozad_union_find::client as ufclient;
+use cozad_union_find::client::BulkConnection as ufconnection;
 
 let mut client = ufclient::Client::new();
 let nodes = vec![
