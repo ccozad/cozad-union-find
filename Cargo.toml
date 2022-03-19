@@ -1,15 +1,15 @@
 [package]
-name = "cozad-union-find"
-version = "0.1.0"
+name = "cozad_union_find"
+version = "1.0.0"
 edition = "2021"
 license = "MIT"
 description = "An implementation of the union-find disjoint set graph algorithm"
 repository = "https://github.com/ccozad/cozad-union-find"
-readme = "README.md"
+readme = "./src/README.md"
 include = [
     "**/*.rs",
     "Cargo.toml",
-    "README.md",
+    "/src/README.md",
     "LICENSE-MIT",
 ]
 

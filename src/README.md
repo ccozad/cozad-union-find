@@ -1,8 +1,7 @@
 # cozad-union-find
-A Rust implementation of the union-find disjoint set graph algorithm
+An implementation of the union-find disjoint set graph algorithm
 
-![MIT License](https://img.shields.io/github/license/ccozad/cozad-union-find) ![Build Status](https://img.shields.io/github/workflow/status/ccozad/cozad-union-find/Build) ![Code Size](https://img.shields.io/github/languages/code-size/ccozad/cozad-union-find) ![Top Language](https://img.shields.io/github/languages/top/ccozad/cozad-union-find)
-![Crates.io](https://img.shields.io/crates/v/cozad_union_find)
+![MIT License](https://img.shields.io/github/license/ccozad/cozad-union-find)
 
 # Quick Start
 
@@ -10,7 +9,7 @@ A Rust implementation of the union-find disjoint set graph algorithm
 For relatively small networks you can simply interact with nodes by name.
 
 ``` rust
-use union_find::client as ufclient;
+use cozad_union_find::client as ufclient;
 
 let mut client = ufclient::Client::new();
 
@@ -51,8 +50,8 @@ Disjoint sets found: 2
 When you have a large volume of connections to process you can skip the lookups that occur with named nodes and use the bulk interfaces. The process involves giving a vector of node names and then specifying connections between nodes by index.
 
 ``` rust
-use union_find::client as ufclient;
-use union_find::client::BulkConnection as ufconnection;
+use cozad_union_find::client as ufclient;
+use cozad_union_find::client::BulkConnection as ufconnection;
 
 let mut client = ufclient::Client::new();
 let nodes = vec![
@@ -92,38 +91,6 @@ Output
 Disjoint sets found: 2
 ```
 
-## Run as a CLI
-
-```
-cargo build
-cd target/debug
-./cozad-union-find -n ../../data/nodes_small.txt -c ../../data/connections_small.txt
-
-```
-
-Example Output
-```
-Node File: ../../data/nodes_small.txt
-Processing nodes file...
-Nodes file processed
-Bulk adding nodes...
-Nodes bulk added
-
-Connections File: ../../data/connections_small.txt
-Processing connections file...
-Connections file processed
-Bulk connecting nodes...
-Nodes bulk connected
-
-Disjoint sets found: 2
-```
-
-## Run the tests
-
-```
-cargo test
-```
-
 # Concepts
  - What is a disjoint set?
    - Disjoint sets have no items in common between each set
@@ -151,10 +118,3 @@ cargo test
    - On demand support videos
    - 1:1 and team coaching
    - New features and other modifications
-
-## License
-
-Licensed under
-
- - MIT license
-   ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
