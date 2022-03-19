@@ -4,7 +4,6 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "An implementation of the union-find disjoint set graph algorithm"
-homepage = "https://github.com/ccozad/cozad-union-find"
 repository = "https://github.com/ccozad/cozad-union-find"
 readme = "README.md"
 
