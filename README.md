@@ -150,3 +150,10 @@ cargo test
    - On demand support videos
    - 1:1 and team coaching
    - New features and other modifications
+
+## License
+
+Licensed under
+
+ - MIT license
+   ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
