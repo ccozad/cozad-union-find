@@ -18,6 +18,7 @@ struct Node {
 }
 
 #[derive(Hash, Eq, PartialEq, Debug)]
+/// A connection between two node indexes
 pub struct BulkConnection {
     /// Index of first connection
     pub a: usize,
@@ -26,6 +27,88 @@ pub struct BulkConnection {
 }
 
 #[derive(Debug)]
+/// A client that manages a graph of nodes and their connections
+///
+/// # Examples
+///
+/// Named node interfaces
+///
+/// ``` rust
+/// extern crate cozad_union_find;
+/// use cozad_union_find::union_find::client as ufclient;
+///
+/// fn main() {
+///    let mut client = ufclient::Client::new();
+///
+///    client.add_node("A");
+///    client.add_node("B");
+///    client.add_node("C");
+///    client.add_node("D");
+///    client.add_node("E");
+///    client.add_node("F");
+///    client.add_node("G");
+///    client.add_node("H");
+///    client.add_node("I");
+///    client.add_node("J");
+///
+///    client.connect_nodes("E", "D");
+///    client.connect_nodes("D", "I");
+///    client.connect_nodes("G", "F");
+///    client.connect_nodes("J", "E");
+///    client.connect_nodes("C", "B");
+///    client.connect_nodes("I", "J");
+///    client.connect_nodes("F", "A");
+///    client.connect_nodes("H", "B");
+///    client.connect_nodes("G", "B");
+///    client.connect_nodes("B", "A");
+///    client.connect_nodes("G", "H");
+///
+///    println!("\nDisjoint sets found: {}", client.disjoint_set_count());
+/// }
+///```
+///
+/// Bulk interfaces
+///
+/// ``` rust
+/// extern crate cozad_union_find;
+/// use cozad_union_find::union_find::client as ufclient;
+/// use cozad_union_find::union_find::client::BulkConnection as ufconnection;
+///
+/// fn main() {
+///
+///    let mut bulk_client = ufclient::Client::new();
+///    let nodes = vec![
+///        String::from("A"), 
+///        String::from("B"), 
+///        String::from("C"),
+///        String::from("D"),
+///        String::from("E"),
+///        String::from("F"), 
+///        String::from("G"), 
+///        String::from("H"), 
+///        String::from("I"), 
+///        String::from("J")
+///    ];
+///    bulk_client.add_nodes_bulk(nodes);
+///
+///    let connections = vec![
+///        ufconnection { a: 4, b: 3 },
+///        ufconnection { a: 3, b: 8 },
+///        ufconnection { a: 6, b: 5 },
+///        ufconnection { a: 9, b: 4 },
+///        ufconnection { a: 2, b: 1 },
+///        ufconnection { a: 8, b: 9 },
+///        ufconnection { a: 5, b: 0 },
+///        ufconnection { a: 7, b: 2 },
+///        ufconnection { a: 6, b: 1 },
+///        ufconnection { a: 1, b: 0 },
+///        ufconnection{ a: 6, b: 7 }
+///    ];
+///    bulk_client.connect_nodes_bulk(connections);
+///
+///    println!("\nDisjoint sets found: {}", bulk_client.disjoint_set_count());
+/// }
+/// ```
 pub struct Client {
     /// Storage for nodes in the graph
     nodes: Vec<Node>,

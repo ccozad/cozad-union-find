@@ -1,6 +1,6 @@
 [package]
 name = "cozad-union-find"
-version = "1.0.0"
+version = "1.1.0"
 edition = "2021"
 license = "MIT"
 description = "An implementation of the union-find disjoint set graph algorithm"
